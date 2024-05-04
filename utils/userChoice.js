@@ -13,16 +13,27 @@ function addClickEventToImages() {
 
             // Append User choice
             const user = document.createElement("p");
+            const userImage = document.createElement("img");
+
             user.textContent = `User chose ${userChoice}`;
-            document.querySelector("#show").appendChild(user);
+            userImage.src = `../images/${userChoice}.svg`;
+
+            document.querySelector("#showUser").appendChild(user);
+            document.querySelector("#showUser").appendChild(userImage);
+
             // Append Computer Choice
             const computer = document.createElement("p");
+            const computerImage = document.createElement("img");
+
             computer.textContent = `Computer chose ${computerChoice}`;
-            document.querySelector("#show").appendChild(computer);
+            computerImage.src = `../images/${computerChoice}.svg`;
+
+            document.querySelector("#showComputer").appendChild(computer);
+            document.querySelector("#showComputer").appendChild(computerImage);
             // Append result
             const resultText = document.createElement("p");
             resultText.textContent = `${result}`;
-            document.querySelector("#show").appendChild(resultText);
+            document.querySelector("#result").appendChild(resultText);
             // deactivat buttons
             buttons.forEach(button => button.disabled = true)
 
@@ -39,10 +50,14 @@ function addClickEventToImages() {
             // reset button
             const resetButton = document.createElement("button");
             resetButton.textContent = "Play again"
-            document.querySelector("#show").appendChild(resetButton);
+            document.querySelector("#result").appendChild(resetButton);
             resetButton.addEventListener("click", () => {
-                document.querySelector("#show").textContent = "";
+                document.querySelector("#result").textContent = "";
                 document.body.removeChild(overlay);
+                document.querySelector('#showUser').removeChild(userImage);
+                document.querySelector("#showUser").removeChild(user);
+                document.querySelector('#showComputer').removeChild(computerImage);
+                document.querySelector("#showComputer").removeChild(computer);
             });
 
         })

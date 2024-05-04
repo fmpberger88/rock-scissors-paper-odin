@@ -75,6 +75,32 @@ footer {
     margin-top: 60px;
 }
 
+.showContainer {
+    display: flex;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+#showUser, #showComputer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#showUser img, #showComputer img {
+    max-width: 120px;
+    height: auto;
+    margin: 20px;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 480px) {
     .icons {
         display: block;
